@@ -21,8 +21,8 @@ services:
       - SONAR_JDBC_USERNAME=sonar
       - SONAR_JDBC_PASSWORD=sonar
     volumes:
-      - sonarqube_conf:/opt/sonarqube/conf
-      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube-server_sonarqube_conf:/opt/sonarqube/conf
+      - sonarqube-server_sonarqube_data:/opt/sonarqube/data
   db:
     image: postgres:16-alpine3.20
     healthcheck:
@@ -39,8 +39,8 @@ services:
       - POSTGRES_USER=sonar
       - POSTGRES_PASSWORD=sonar
     volumes:
-      - postgresql:/var/lib/postgresql
-      - postgresql_data:/var/lib/postgresql/data
+      - sonarqube-server_postgresql:/var/lib/postgresql
+      - sonarqube-server_postgresql_data:/var/lib/postgresql/data
 
 volumes:
   sonarqube-server_sonarqube_conf:
