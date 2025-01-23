@@ -10,7 +10,7 @@ services:
       args:
         SONARQUBE_VERSION: ${SONARQUBE_VERSION}
         PLUGIN_VERSION: ${PLUGIN_VERSION}
-    container_name: sonarqube-server
+    container_name: sonarqube
     restart: always
     ports:
       - "9000:9000"
@@ -31,7 +31,7 @@ services:
       timeout: 5s
       retries: 5
     hostname: db
-    container_name: postgres-db
+    container_name: postgres
     restart: always
     networks:
       - sonarnet
